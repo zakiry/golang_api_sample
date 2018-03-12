@@ -6,9 +6,9 @@ import (
 )
 
 func AppConf() entity.AppConf {
-	builder := entity.AppConfBuilder{}
+	appConf := entity.AppConf{}
 
-	configor.Load(&builder, "conf/app_conf.yml")
+	configor.Load(&appConf, "conf/app_conf.yml")
 
-	return builder.Build()
+	return appConf
 }

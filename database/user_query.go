@@ -18,11 +18,11 @@ type userImpl struct {
 }
 
 func (impl *userImpl) GetById(id int64) entity.User {
-	record := entity.UserRecord{}
+	user := entity.User{}
 	impl.db.
 		Select("id, name, age").
 		Table("users").
 		Where("id = ?", id).
-		Find(&record)
-	return record.Build()
+		Find(&user)
+	return user
 }

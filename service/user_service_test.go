@@ -17,7 +17,7 @@ func TestUserService_GetUser(t *testing.T) {
 	userId := int64(1)
 
 	mockUser := mock_database.NewMockUser(ctrl)
-	mockUser.EXPECT().GetById(userId).Return(entity.UserRecord{Id: 1, Name: "piyo piyo", Age: 23}.Build())
+	mockUser.EXPECT().GetById(userId).Return(entity.User{Id: 1, Name: "piyo piyo", Age: 23})
 
 	service := userService{user: mockUser}
 

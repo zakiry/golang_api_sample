@@ -17,5 +17,5 @@ type userService struct {
 
 func (svc *userService) GetUser(ctx context.Context, req *pb.GetUserRequest) (*pb.GetUserResponse, error) {
 	user := svc.user.GetById(req.GetId())
-	return &pb.GetUserResponse{Id: user.Id(), Name: user.Name(), Age: user.Age()}, nil
+	return &pb.GetUserResponse{Id: user.Id, Name: user.Name, Age: user.Age}, nil
 }

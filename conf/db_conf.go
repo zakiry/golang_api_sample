@@ -6,9 +6,9 @@ import (
 )
 
 func DbConf() entity.DbConf {
-	builder := entity.DbConfBuilder{}
+	dbConf := entity.DbConf{}
 
-	configor.Load(&builder, "conf/db_conf.yml")
+	configor.Load(&dbConf, "conf/db_conf.yml")
 
-	return builder.Build()
+	return dbConf
 }

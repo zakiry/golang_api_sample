@@ -34,7 +34,7 @@ func main() {
 	mux.Handle(pb.UserServicePathPrefix, pb.NewUserServiceServer(services.userService, nil))
 
 	appConf := conf.AppConf()
-	http.ListenAndServe(fmt.Sprintf(":%d", appConf.Port()), mux)
+	http.ListenAndServe(fmt.Sprintf(":%d", appConf.Port), mux)
 }
 
 func initServices(db *gorm.DB) services {

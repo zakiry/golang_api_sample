@@ -25,14 +25,14 @@ type databaseImpl struct {
 // This function is called once when server start.
 func (s *databaseImpl) Open() *gorm.DB {
 	options := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?parseTime=True",
-		s.conf.User(),
-		s.conf.Password(),
-		s.conf.Address(),
-		s.conf.Port(),
-		s.conf.Dbname(),
+		s.conf.User,
+		s.conf.Password,
+		s.conf.Address,
+		s.conf.Port,
+		s.conf.Dbname,
 	)
 
-	db, err := gorm.Open(s.conf.Dialect(), options)
+	db, err := gorm.Open(s.conf.Dialect, options)
 	if err != nil {
 		log.Fatalf("Can't open : %v", err)
 		panic(err.Error())

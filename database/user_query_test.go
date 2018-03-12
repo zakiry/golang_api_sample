@@ -36,5 +36,5 @@ func TestUserImpl_GetById(t *testing.T) {
 	user := userImpl{db: db}
 	actual := user.GetById(userId)
 
-	assert.Equal(t, entity.UserRecord{Id: 1, Name: "piyo piyo", Age: 12}.Build(), actual)
+	assert.Equal(t, entity.User{Id: 1, Name: "piyo piyo", Age: 12}, actual)
 }
